@@ -42,7 +42,7 @@ const KanbanBoard = () => {
   }, [path, issuesData])
 
   useEffect(() => {
-    if (path) localStorage.setItem(path, JSON.stringify(issuesState))
+    if (path && Object.values(issuesState).some(issues => issues.length > 0)) localStorage.setItem(path, JSON.stringify(issuesState))
   }, [path, issuesState])
 
   const [activeId, setActiveId] = useState<UniqueIdentifier | null>(null)

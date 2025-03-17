@@ -1,54 +1,72 @@
-# React + TypeScript + Vite
+# GitHub Kanban Board
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **Kanban-style board** for managing GitHub issues, built with **React 18**, **TypeScript**, and **Chakra UI**. Supports **drag-and-drop**, **state persistence LocalStorage**, and integration with GitHub's API to fetch repository issues.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 📌 **Fetch GitHub Issues**: Enter a repository URL to load open issues.
+- 🖱️ **Drag & Drop**: Move issues between columns using `@dnd-kit`.
+- 💾 **Persistent State**: Saves issues in **local storage** so your changes remain after refresh.
+- 🎨 **Modern UI**: Styled with Chakra UI and Bootstrap for a clean look.
+- 🔍 **Real-time GitHub Data**: Displays repo info like stars and issue counts.
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Node version: 20+**
+- **React 18** + TypeScript
+- **Chakra UI**
+- **Redux Toolkit** (for state management)
+- **@dnd-kit** (for drag-and-drop functionality)
+- **Local Storage** (for persistence)
+- **GitHub API** (for fetching issues and repo metadata)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 📦 Installation
+
+Clone the repository and install dependencies:
+
+```bash
+# Clone the repository
+git clone https://github.com/levchenko-dmytro/kanban.git
+
+# Navigate into the project
+cd kanban
+
+# Install dependencies
+npm install  # or yarn install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## ▶️ Usage
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Start the development server:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm run dev  # or yarn dev
 ```
+
+Then, open [http://localhost:5173](http://localhost:5173) in your browser.
+
+## 🏗️ How It Works
+
+1. **Enter a GitHub repo URL** (e.g., `https://github.com/facebook/react`).
+2. **Load Issues**: The app fetches open issues via the GitHub API.
+3. **Drag and Drop Issues** between columns (`To Do`, `In Progress`, `Done`).
+4. **Data Persistence**: Issue positions are saved in **Local Storage**.
+5. **Refresh the page** and see your updates retained!
+
+## [Demo](https://levchenko-dmytro.github.io/kanban/)
+
+## ✅ Testing
+Run unit tests with:
+
+```bash
+npm run test  # or yarn test
+```
+
+## 📄 License
+
+This project is **open-source** under the MIT License.
+
+---
+
+💡 **Contributions are welcome!** Feel free to fork this repo and submit pull requests. 🚀
+

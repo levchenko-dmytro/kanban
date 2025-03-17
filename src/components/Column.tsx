@@ -12,7 +12,7 @@ const Column = ({ issues, column }: { issues: IssueInter[], column: string }) =>
 
   return (
     <SortableContext items={issues.map(issue => issue.id)}>
-      <Box data-id='coll' ref={setNodeRef} flex={1} p={3} borderWidth={1} borderRadius="md" bg="gray.100">
+      <Box ref={setNodeRef} flex={1} p={3} borderWidth={1} borderRadius="md" bg="gray.100">
         <Heading size="md" mb={2}>
           {column}
         </Heading>
