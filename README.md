@@ -55,13 +55,6 @@ Then, open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ## [Demo](https://levchenko-dmytro.github.io/kanban/)
 
-## ✅ Testing
-Run unit tests with:
-
-```bash
-npm run test  # or yarn test
-```
-
 ## 📄 License
 
 This project is **open-source** under the MIT License.
